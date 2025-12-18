@@ -22,6 +22,7 @@ body {
     background-color: var(--fundo-principal);
     color: var(--texto);
     font-family: var(--font-defaut);
+    font-size: 1rem;
     line-height: 1.6rem;
 }
 
@@ -78,7 +79,9 @@ body {
 
     h1 {
         color: var(--destaque);
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem);
+        letter-spacing: 3px;
+        line-height: 2rem;
         text-align: center;
     }
 
@@ -110,6 +113,7 @@ body {
 
     h2 {
         color: var(--texto);
+        font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
         font-weight: 300;
         letter-spacing: 3px;
         margin-bottom: 1rem;
@@ -126,7 +130,7 @@ body {
             display: block;
             height: 1px;
             margin-top: 3px;
-            width: 25%;
+            width: 10%;
         }
     }
 
@@ -150,5 +154,61 @@ body {
             height: 100%;
             width: 100%;
         }
+    }
+}
+
+.skill-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    .skill-info {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 8px;
+
+        .skill-name {
+            color: var(--texto);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .skill-percent {
+            color: var(--texto);
+            font-size: 0.85rem;
+            /* font-weight: 500; */
+            opacity: 0.8;
+        }
+
+    }
+
+    .skill-bar {
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        height: 0.5rem;
+        overflow: hidden;
+        width: 100%;
+
+        .skill-bar-progress {
+            animation: fillProgress 2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+            background: linear-gradient(90deg, var(--destaque), var(--destaque-inverso));
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+            border-radius: 4px;
+            height: 100%;
+        }
+    }
+}
+
+@keyframes fillProgress {
+    from {
+        width: 0;
+        filter: brightness(1.5);
+        /* Começa brilhando e volta ao normal */
+    }
+
+    to {
+        width: var(--width);
     }
 }
