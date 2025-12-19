@@ -161,6 +161,7 @@ body {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
+    /* margin-bottom: 1rem; */
 
     .skill-info {
         align-items: center;
@@ -201,6 +202,7 @@ body {
     }
 }
 
+
 @keyframes fillProgress {
     from {
         width: 0;
@@ -212,3 +214,9 @@ body {
         width: var(--width);
     }
 }
+
+
+@media screen and (min-width: 768px) {
+    .skill-container {
+        grid-template-columns: 1fr 1fr;
+    }
