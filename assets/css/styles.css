@@ -26,6 +26,13 @@ body {
     line-height: 1.6rem;
 }
 
+body.dark-mode {
+    --fundo-principal: #121212;
+    --texto: #e0e0e0;
+    --fundo-card: #1e1e1e;
+    --destaque-inverso: #3399ff;
+}
+
 #menu {
     align-content: center;
     background-color: var(--destaque);
@@ -41,9 +48,12 @@ body {
     }
 
     a {
+        align-items: center;
         border-radius: 4px;
         color: var(--texto-inverso);
+        display: flex;
         font-weight: 400;
+        gap: 0.5rem;
         padding: 0.3em 1rem;
         text-decoration: none;
         transition: all 0.3s ease-in-out;
@@ -56,10 +66,10 @@ body {
 }
 
 #content {
-    /* background-color: red; */
     display: grid;
-    /* gap: 1.5rem; */
-    grid-template-columns: auto 90vw auto;
+    gap: 1.5rem;
+    grid-template-columns: 1fr min(800px, 92vw) 1fr;
+    justify-content: center;
 }
 
 #ficha {
@@ -74,7 +84,7 @@ body {
         display: block;
         margin: 2.5rem auto 1.5rem auto;
         outline: 0.3rem solid var(--destaque);
-        width: 200px;
+        width: 12.5rem;
     }
 
     h1 {
@@ -82,6 +92,7 @@ body {
         font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem);
         letter-spacing: 3px;
         line-height: 2rem;
+        margin-top: 2rem;
         text-align: center;
     }
 
@@ -137,7 +148,7 @@ body {
     .video,
     .skills,
     .formacao,
-    .projetos {
+    .projeto {
         background-color: var(--fundo-card);
         border-radius: 0.625rem;
         margin: 1.5rem 0;
@@ -157,30 +168,42 @@ body {
     }
 }
 
-.skill-container {
+.skill-container,
+.formacao-container,
+.projeto-container {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
-    /* margin-bottom: 1rem; */
 
     .skill-info {
         align-items: center;
         display: flex;
         justify-content: space-between;
-
-        margin-bottom: 8px;
+        margin-bottom: 0.625rem;
 
         .skill-name {
             color: var(--texto);
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            opacity: 0.9;
+
+            i {
+                align-items: center;
+                background-color: #e0e0e0;
+                border-radius: 50%;
+                display: inline-flex;
+                justify-content: center;
+                font-size: 1.5rem;
+                height: 2.5rem;
+                opacity: 1;
+                margin-right: 0.5rem;
+                width: 2.5rem;
+            }
         }
 
         .skill-percent {
             color: var(--texto);
             font-size: 0.85rem;
-            /* font-weight: 500; */
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
     }
@@ -193,30 +216,148 @@ body {
         width: 100%;
 
         .skill-bar-progress {
-            animation: fillProgress 2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
             background: linear-gradient(90deg, var(--destaque), var(--destaque-inverso));
             box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
             border-radius: 4px;
             height: 100%;
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.1, 0.7, 0.1, 1);
         }
     }
 }
 
+.formacao-curso {
+    border-left: 3px solid #e0e0e0;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
 
-@keyframes fillProgress {
-    from {
-        width: 0;
-        filter: brightness(1.5);
-        /* Começa brilhando e volta ao normal */
+    .periodo {
+        font-size: 0.8rem;
+        color: var(--destaque);
+        font-weight: 600;
     }
 
-    to {
-        width: var(--width);
+    .instituicao {
+        font-size: 1.1rem;
+        margin: 0.2rem 0;
+    }
+
+    .curso {
+        font-size: 0.9rem;
+        opacity: 0.8;
     }
 }
 
+.projeto-card {
+    background-color: var(--fundo-principal);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+}
+
+.projeto-capa {
+    aspect-ratio: 16 / 9;
+    background-color: #ddd;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+}
+
+.projeto-card:hover .projeto-capa img {
+    transform: scale(1.1);
+}
+
+.projeto-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.5rem;
+
+    h3 {
+        color: var(--destaque);
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        margin: 0;
+    }
+}
+
+.projeto-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    a {
+        align-items: center;
+        color: var(--texto);
+        display: flex;
+        font-size: 0.875rem;
+        font-weight: 600;
+        gap: 0.325rem;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--destaque);
+        }
+    }
+}
+
+.projeto-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    span {
+        background-color: var(--fundo-principal);
+        border: 1px solid var(--destaque);
+        border-radius: 1.25rem;
+        color: var(--destaque);
+        cursor: default;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 0.125rem 0.625rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--destaque);
+            color: var(--texto-inverso);
+        }
+    }
+}
+
+/* Ajuste no modo escuro para as etiquetas ficarem legíveis */
+body.dark-mode .projeto-badges span {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-color: var(--destaque-inverso);
+    color: var(--destaque-inverso);
+}
 
 @media screen and (min-width: 768px) {
-    .skill-container {
+
+    .skill-container,
+    .formacao-container,
+    .projeto-container {
         grid-template-columns: 1fr 1fr;
     }
+}
