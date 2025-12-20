@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/svg">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/globals.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
     <title>Junior Eberhardt - portifólio</title>
 </head>
 
@@ -13,20 +16,45 @@
 
     <header>
         <nav id="menu">
-            <i class="fa-sharp fa-solid fa-j"></i><i class="fa-sharp fa-solid fa-e"></i>
+            <!-- <i class="fa-sharp fa-solid fa-j"></i><i class="fa-sharp fa-solid fa-e"></i> -->
             <ul>
-                <li><a href="#"><i class="fa-solid fa-house-chimney-crack"></i> Home</a></li>
-                <li><a href="#"><i class="fa-brands fa-superpowers"></i> Skills</a></li>
-                <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Formação</a></li>
-                <li><a href="#"><i class="fa-solid fa-diagram-project"></i> Projetos</a></li>
-                <li><a href="#"><i class="fa-solid fa-moon"></i> Temas</a></li>
+                <li>
+                    <a href="#ficha" alt="Home" title="Home">
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" alt="Habilidade" title="Habilidade">
+                        <i class="fa-brands fa-superpowers"></i>
+                        <span class="nav-text">Skills</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#formacao" alt="Formação" title="Formação">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span class="nav-text">Formação</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projetos" alt="Projetos" title="Projetos">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <span class="nav-text">Projetos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="Dark/Light" title="Dark/Light">
+                        <i class="fa-solid fa-moon"></i>
+                        <span class="nav-text">Temas</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main id="content">
 
-        <section id="ficha">
+        <section class="ficha-container">
             <img src="assets/img/avatar.png" alt="Junior Eberhardt" class="ficha-img">
             <h1>Junior Eberhardt</h1>
             <p>
@@ -34,19 +62,20 @@
                 Atualmente, estudando muito para se adequar ao mercado de trabalho.
             </p>
             <div class="ficha-social">
-                <a href="https://junioreberhardt.github.io/" alt="GitHub" target="_blank" rel="nofollow">
+                <a href="https://junioreberhardt.github.io/" title="GitHub" alt="GitHub" target="_blank" rel="nofollow">
                     <i class="fa-brands fa-github-alt"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/junioreberhardt/" alt="Linkedin" target="_blank" rel="nofollow">
+                <a href="https://www.linkedin.com/in/junioreberhardt/" title="Linkedin" alt="Linkedin" target="_blank"
+                    rel="nofollow">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="" alt="Instagram" target="_blank" rel="nofollow">
+                <a href="" title="Instagram" alt="Instagram" target="_blank" rel="nofollow">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </div>
         </section>
 
-        <section id="detalhes">
+        <section class="detalhes-container">
             <article class="video">
                 <h2>Deixe-me <span>apresentar</span></h2>
                 <div class="iframe">
@@ -58,7 +87,7 @@
                 </div>
             </article><!-- video -->
 
-            <article class="skills">
+            <article id="skills" class="skills">
                 <h2>Minhas <span>skills</span></h2>
                 <div class="skill-container">
 
@@ -185,7 +214,7 @@
                 </div>
 
             </article><!-- skills -->
-            <article class="formacao">
+            <article id="formacao" class="formacao">
                 <h2>Minha <span>formação</span></h2>
                 <div class="formacao-container">
 
@@ -215,29 +244,30 @@
 
                 </div>
             </article><!-- formacao -->
-            <article class="projeto">
+            <article id="projetos" class="projeto">
                 <h2>Meus <span>projetos</span></h2>
 
                 <div class="projeto-container">
+
                     <div class="projeto-item">
                         <div class="projeto-card">
                             <div class="projeto-capa">
-                                <img src="assets/img/projeto1.jpg" alt="Preview Projeto">
+                                <img src="assets/img/projetcs/android.png" alt="Preview Projeto">
                             </div>
                             <div class="projeto-corpo">
-                                <h3>Nome do Projeto</h3>
-
+                                <h3>Android</h3>
                                 <div class="projeto-badges">
                                     <span>HTML5</span>
                                     <span>CSS3</span>
-                                    <span>JavaScript</span>
+                                    <span>Adaptável</span>
                                 </div>
-
-                                <p>Breve descrição do projeto e as tecnologias que você utilizou.</p>
-
+                                <p>Esse projeto conta de forma resumida, como foi a trajetória para concepção do logo da
+                                    até então, tão amada, Android.</p>
                                 <div class="projeto-links">
-                                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                                    <a href="#" target="_blank"><i class="fa-solid fa-link"></i> Demo</a>
+                                    <a href="https://github.com/junioreberhardt/site-android" target="_blank"><i
+                                            class="fa-brands fa-github"></i> GitHub</a>
+                                    <a href="https://junioreberhardt.github.io/site-android/" target="_blank"><i
+                                            class="fa-solid fa-link"></i> Acesse</a>
                                 </div>
                             </div>
                         </div>
@@ -246,22 +276,23 @@
                     <div class="projeto-item">
                         <div class="projeto-card">
                             <div class="projeto-capa">
-                                <img src="assets/img/projeto1.jpg" alt="Preview Projeto">
+                                <img src="assets/img/projetcs/cordel.png" alt="Preview Projeto">
                             </div>
                             <div class="projeto-corpo">
-                                <h3>Nome do Projeto</h3>
-
+                                <h3>Cordel moderno</h3>
                                 <div class="projeto-badges">
                                     <span>HTML5</span>
                                     <span>CSS3</span>
-                                    <span>JavaScript</span>
+                                    <span>Adaptável</span>
                                 </div>
-
-                                <p>Breve descrição do projeto e as tecnologias que você utilizou.</p>
+                                <p>Desenvolvimento de uma página dedicada à preservação e difusão da literatura de
+                                    cordel.</p>
 
                                 <div class="projeto-links">
-                                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                                    <a href="#" target="_blank"><i class="fa-solid fa-link"></i> Demo</a>
+                                    <a href="https://github.com/junioreberhardt/site-cordel" target="_blank"><i
+                                            class="fa-brands fa-github"></i> GitHub</a>
+                                    <a href="https://junioreberhardt.github.io/site-cordel/" target="_blank"><i
+                                            class="fa-solid fa-link"></i> Acesse</a>
                                 </div>
                             </div>
                         </div>
@@ -269,16 +300,28 @@
 
                 </div>
             </article><!-- projetos -->
-
         </section>
-
     </main>
 
     <footer>
-
+        <div class="footer-minimal">
+            <div class="footer-left">
+                <p>&copy; 2025 Junior Eberhardt</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://junioreberhardt.github.io/" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/junioreberhardt/" target="_blank">LinkedIn</a>
+                <a href="mailto:junior.eberhardt@gmail.com">Contato</a>
+            </div>
+        </div>
     </footer>
+
+    <button id="backToTop" title="Voltar ao topo">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <script src="https://kit.fontawesome.com/1a1d4396f1.js" crossorigin="anonymous"></script>
-    <script src="assets/js/scripts.js"></script>
+    <!-- <script src="assets/js/scripts.js"></script> -->
 </body>
 
 </html>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* scroll-padding-top: 60px; */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--font-defaut);
+    line-height: 1.6;
+    transition: var(--transicao);
+}
+
+img,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --font-defaut: 'Poppins', Arial, Helvetica, sans-serif;
+    --cor-primaria: #007bff;
+    --cor-fundo: #f2f2f2;
+    --cor-card: #f8f9fa;
+    --cor-texto: #333;
+    --cor-texto-sec: #666;
+    --cor-branco: #fff;
+    --cor-borda: rgba(0, 0, 0, 0.1);
+    --sombra: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
+    --transicao: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- MODO ESCURO (Inversão Inteligente) --- */
+body.dark-mode {
+    --cor-primaria: #39f;
+    --cor-fundo: #121212;
+    --cor-card: #1e1e1e;
+    --cor-texto: #e0e0e0;
+    --cor-texto-sec: #b0b0b0;
+    --cor-borda: rgba(255, 255, 255, 0.1);
+    --sombra: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
+}

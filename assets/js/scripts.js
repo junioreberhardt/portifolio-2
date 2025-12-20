@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+
+    // --- LÓGICA DE DESTAQUE AUTOMÁTICO (SCROLL SPY) ---
+    const sections = document.querySelectorAll('section[id], article[id]');
+    const navLinks = document.querySelectorAll('#menu ul li a');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            // Verifica se o scroll está dentro da secção (com margem de 100px)
+            if (pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
     // --- 1. LÓGICA DO MODO ESCURO ---
     const themeButton = document.querySelector('a[href="#"]:has(.fa-moon)'); // Seleciona o link com o ícone de lua
     const body = document.body;
@@ -61,5 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    });
+});
+
+const backToTopButton = document.getElementById("backToTop");
+
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    // Mostra o botão quando o usuário rola 300px para baixo
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "flex";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+}
+
+// Quando o usuário clica no botão, volta para o topo suavemente
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 });

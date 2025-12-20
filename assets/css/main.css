@@ -1,0 +1,56 @@
+#content {
+    margin: 0 auto;
+    width: min(800px, 92vw);
+}
+
+.ficha-container,
+.skill-container,
+.formacao-container,
+.projeto-container {
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1em;
+}
+
+.ficha-container {
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .ficha-img {
+        border: 3px solid var(--cor-card);
+        border-radius: 50%;
+        margin: 1.5rem auto 0 auto;
+        outline: 3px solid var(--cor-primaria);
+        width: min(80%, 200px);
+    }
+
+    h1 {
+        color: var(--cor-primaria);
+        font-size: 1.9rem;
+        margin-top: 0.5rem;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    .ficha-social {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+
+        a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            transition: var(--transicao);
+
+            &:hover {
+                color: var(--cor-texto);
+            }
+        }
+    }
+}
